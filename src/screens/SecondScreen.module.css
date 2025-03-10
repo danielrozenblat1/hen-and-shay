@@ -1,0 +1,10 @@
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 1% auto;
+    direction: rtl;
+    flex-wrap: wrap;
+}

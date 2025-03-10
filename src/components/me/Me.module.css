@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem 0;
+  direction: rtl;
+
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 150, 136, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 150, 136, 0.03) 0%, transparent 20%);
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.titleContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:20px auto;/* הוקטן מ-80px כדי לצמצם את הרווח הכולל */
+ 
+  overflow: visible;
+}
+
+.title {
+  font-size: 2.2rem; /* הוקטן מ-2.6rem ל-2.2rem */
+  font-weight: 300;
+  text-align: center;
+  color: #333;
+  font-family: "Assistant";
+  position: relative;
+  z-index: 2;
+  margin: 0;
+
+}
+
+.titleBackground {
+  position: absolute;
+  font-size: 5rem;
+  font-weight: 200;
+  color: rgba(0, 150, 136, 0.04);
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 1;
+  transform: scale(1.5);
+  letter-spacing: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-stretch: expanded;
+  font-weight: 200;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto 10px; /* צומצם ל-10px בדיוק */
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.description::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* הוקטן ל-10px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: #009688;
+}
+
+.description p {
+  margin-bottom: 25px;
+  line-height: 1.9;
+  font-family: "AssistantR";
+  color: #555;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.teamGrid {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 700px;
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.imageWrapper {
+  position: relative;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: transparent;
+  padding: 6px;
+}
+
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 150, 136, 0.2);
+  animation: pulse 5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.1;
+  }
+}
+
+.teamImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  filter: grayscale(15%);
+  box-shadow: 0 0 0 1px rgba(0, 150, 136, 0.2);
+}
+
+.teamMember:hover .teamImage {
+  filter: grayscale(0%);
+}
+
+.memberName {
+  font-size: 1.2rem;
+  color: #333;
+  font-family: "Assistant";
+  margin: 0;
+  font-weight: 400;
+  position: relative;
+}
+
+.memberName::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 1px;
+  background-color: #00968880;
+  transition: width 0.3s ease;
+}
+
+.teamMember:hover .memberName::after {
+  width: 40px;
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.advantageItem {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0, 150, 136, 0.1),
+              inset 0 0 20px rgba(0, 150, 136, 0.05),
+              0 10px 20px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantageItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 10%, rgba(0, 150, 136, 0.03), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.advantageItem:hover {
+  transform: translateY(-5px);
+  box-shadow: inset 0 0 0 1px rgba(0, 150, 136, 0.15),
+              inset 0 0 30px rgba(0, 150, 136, 0.08),
+              0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.advantageItem:hover::before {
+  opacity: 1;
+}
+
+.icon {
+  margin-bottom: 15px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.icon::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 150, 136, 0.05);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.advantageItem:hover .icon::after {
+  transform: translate(-50%, -50%) scale(1.2);
+  background-color: rgba(0, 150, 136, 0.08);
+}
+
+.advantageItem h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-family: "Assistant";
+  color: #333;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.advantageItem p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* Custom scroll effect for the page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* עדכון בקובץ CSS כדי שהתמונות של חן ושי יופיעו זו לצד זו גם במסכים קטנים */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 0;
+  }
+
+  .wrapper {
+    padding: 0 15px;
+  }
+
+  .titleContainer {
+    margin-bottom: 20px; /* הוקטן מ-60px ל-20px */
+  }
+
+  .title {
+    font-size: 2rem; /* הוקטן מ-2.4rem ל-2rem */
+  }
+
+  .titleBackground {
+    font-size: 4rem;
+    letter-spacing: 8px;
+  }
+
+  /* שינוי למסך בינוני */
+  .description {
+    margin-bottom: 10px; /* נשאר 10px גם במסכים קטנים */
+  }
+  
+  .description::after {
+    bottom: -10px; /* נשאר 10px גם במסכים קטנים */
+  }
+
+  /* שינוי: עכשיו התמונות ישארו אחת ליד השניה גם במסכים קטנים */
+  .teamGrid {
+    /* הסרת flex-direction: column - כדי שיישאר row כברירת מחדל */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* הוספת רווח מינימלי בין התמונות */
+  .teamMember {
+    margin: 0 10px;
+  }
+
+  /* הקטנת גודל התמונות במסכים קטנים */
+  .teamImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .advantages {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .advantageItem {
+    padding: 30px 15px;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* עדכון נוסף למסכים מאוד קטנים */
+@media (max-width: 480px) {
+  .titleContainer {
+    margin-bottom: 15px; /* הוקטן מ-50px ל-15px */
+  }
+
+  .title {
+    font-size: 1.8rem; /* הוקטן מ-2rem ל-1.8rem */
+  }
+
+  .titleBackground {
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+  }
+
+  .description {
+    margin-bottom: 10px; /* נשאר 10px */
+  }
+
+  .description::after {
+    bottom: -10px; /* נשאר 10px */
+  }
+
+  /* שמירה על תצוגת שתי התמונות זו לצד זו גם במסכים קטנים מאוד */
+  .teamGrid {
+    justify-content: center;
+  }
+
+  /* הקטנה נוספת של התמונות במסכים קטנים מאוד */
+  .teamImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .advantages {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .advantageItem {
+    padding: 25px 15px;
+  }
+}

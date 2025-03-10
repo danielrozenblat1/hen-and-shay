@@ -1,0 +1,112 @@
+.container {
+  padding: 2rem;
+  font-family: 'AssistantR', 'Assistant', sans-serif;
+  direction: rtl;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #40baba;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(135deg, rgba(64, 186, 186, 0.9), rgba(45, 165, 165, 0.9));
+  border-radius: 2px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(64, 186, 186, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(64, 186, 186, 0.25);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  color: #40baba;
+  margin-bottom: 1rem;
+  stroke-width: 1.5px;
+}
+
+.serviceName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  font-family: 'AssistantR', 'Assistant', sans-serif;
+}
+
+.moreInfoButton {
+  background: linear-gradient(135deg, rgba(64, 186, 186, 0.9), rgba(45, 165, 165, 0.9));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'AssistantR', 'Assistant', sans-serif;
+}
+
+.moreInfoButton:hover {
+  background: linear-gradient(135deg, rgba(45, 165, 165, 0.9), rgba(40, 150, 150, 0.9));
+}
+
+/* אותו גוון לכל האייקונים */
+.serviceIcon { 
+  color: #40baba; 
+}
+
+/* גרדיאנט לכל הכפתורים */
+.moreInfoButton { 
+  background: linear-gradient(135deg, rgba(64, 186, 186, 0.9), rgba(45, 165, 165, 0.9)); 
+}
+
+.moreInfoButton:hover { 
+  background: linear-gradient(135deg, rgba(45, 165, 165, 0.9), rgba(40, 150, 150, 0.9)); 
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
