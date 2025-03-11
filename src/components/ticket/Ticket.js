@@ -28,7 +28,7 @@ const FlightCard = ({ imageUrl, title, description }) => {
           className={styles.button}
           onClick={handleButtonClick}
         >
-          מעניין אותי לשמוע!
+          מעניין אותי לשמוע
         </button>
       </div>
     </div>
