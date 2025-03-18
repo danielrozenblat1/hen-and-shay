@@ -51,8 +51,8 @@
 
 /* עדכון חדש - מעטפת לאייקונים */
 .iconWrapper {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,8 +110,8 @@
   
   /* הקטנת האייקונים במסכים קטנים */
   .iconWrapper {
-    width: 42px;
-    height: 42px;
+    width: 55px;
+    height: 55px;
   }
 }
 
@@ -122,7 +122,7 @@
   
   /* הקטנה נוספת של האייקונים במסכים קטנים מאוד */
   .iconWrapper {
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
   }
 }

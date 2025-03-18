@@ -12,14 +12,16 @@ import BackgroundGlass from './components/If/If';
 import FifthScreen from './screens/FifthScreen';
 import ForthScreen from './screens/ForthScreen';
 import NewCopy from './screens/ForthScreen copy';
+import Places from './components/places/Places';
 
 function App() {
   return <>
   <NavBarNew/>
   <FirstScreen/>
   <SecondScreen/>
-
+<Places/>
   <Timeline/>
+  
   <ForthScreen/>
   <AboutUs/>
 <NewCopy/>
