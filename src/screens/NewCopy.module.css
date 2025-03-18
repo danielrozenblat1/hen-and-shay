@@ -1,0 +1,168 @@
+/* ForthScreen.module.css */
+.container {
+    position: relative;
+    margin: 20px auto;
+    width: 100%;
+    height:100vh;
+ 
+    background-color: #e6feff; /* Light turquoise background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    
+    /* Add transition properties for smooth animations */
+    transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67),
+                opacity 0.8s ease;
+    
+    /* Initial state for reveal animation */
+    opacity: 0;
+    transform: translateY(60px);
+    perspective: 1000px; /* Adds 3D perspective for parallax effects */
+}
+
+/* Visible state for when element enters viewport */
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Active state for when element is centered in viewport */
+.container.active {
+    box-shadow: 0 30px 60px rgba(0, 160, 176, 0.3);
+}
+
+.container.active .backgroundImage {
+    filter: saturate(1.2) brightness(1.05);
+}
+  
+.backgroundImage {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/רקע\ מיוחד\ 4.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 100px;
+    opacity: 0.4;
+    /* Add transition for smooth parallax effect */
+    transition: transform 0.2s ease-out, filter 0.5s ease;
+    /* Will-change improves performance for animations */
+    will-change: transform;
+    transform-origin: center center;
+    filter: saturate(1) brightness(1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+}
+
+.parallaxLayer1, .parallaxLayer2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.parallaxLayer1 {
+    top: -20%;
+    height: 100%;
+    background-size: 160%;
+    background-image: radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0) 45%
+    );
+    animation: floatLayer1 20s infinite alternate ease-in-out;
+}
+
+.parallaxLayer2 {
+    bottom: -20%;
+    height: 100%;
+    background-size: 120%;
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        rgba(0, 160, 176, 0.1) 0%,
+        rgba(0, 160, 176, 0) 50%
+    );
+    animation: floatLayer2 15s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatLayer1 {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(5%) translateX(3%);
+    }
+}
+
+@keyframes floatLayer2 {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-5%) translateX(-3%);
+    }
+}
+
+/* Add animation for when element first appears */
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Below 350px */
+@media screen and (max-width: 349px) {
+    .container {
+        border-radius: 30px;
+        height: 350px;
+    }
+}
+  
+/* 350px - 450px */
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    .container {
+        border-radius: 40px;
+        height: 400px;
+    }
+}
+  
+/* 450px - 550px */
+@media screen and (min-width: 451px) and (max-width: 550px) {
+    .container {
+        border-radius: 50px;
+        height: 450px;
+    }
+}
+  
+/* 550px - 650px */
+@media screen and (min-width: 551px) and (max-width: 650px) {
+    .container {
+        border-radius: 60px;
+    }
+}
+  
+/* 650px - 750px */
+@media screen and (min-width: 651px) and (max-width: 750px) {
+    .container {
+        border-radius: 70px;
+    }
+}
+
+/* Custom effect for extremely large screens */
+@media screen and (min-width: 1600px) {
+    .container {
+        height: 600px;
+    }
+}

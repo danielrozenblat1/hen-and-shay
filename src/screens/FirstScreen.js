@@ -45,7 +45,7 @@ const FirstScreen = () => {
       <div className={styles.content}>
         <h1 className={styles.mainTitle}>מתכננים חופשה בקרוב?</h1>
         <p className={styles.subtitle}>
-          אנחנו כאן לוודא שהיא תעבור בלי תקלות
+          אנחנו כאן לוודא שהיא תעבור בלי בלת''מים
         </p>
         <p className={styles.asterisk}>
           *מותאם גם לחופשות בארץ וגם לחופשות בחו"ל*
