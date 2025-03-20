@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import styles from './NavBarNew.module.css';
 import logo from "../../images/חן ושי לוגו.png"
 
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa';
 
 const NavBarNew = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,6 +47,10 @@ const NavBarNew = () => {
     window.open(whatsappURL, "_blank");
   };
 
+  const handleInstagramClick = () => {
+    window.open("https://www.instagram.com/s.n.h.travel", "_blank");
+  };
+
   return (
     <nav className={`
       ${styles.navbar} 
@@ -55,6 +59,16 @@ const NavBarNew = () => {
       <div className={styles.navbarInner}>
         <div className={styles.logo}>
           <img src={logo} alt="Logo" />
+        </div>
+        
+        <div className={styles.socialIcons}>
+          <div className={styles.iconWrapper} onClick={handleInstagramClick}>
+            <FaInstagram className={styles.icon} />
+          </div>
+          <div className={styles.iconWrapper} onClick={handleWhatsAppClick}>
+            <FaWhatsapp className={styles.icon} />
+          </div>
+     
         </div>
         
         <button className={styles.menuButton} onClick={handleWhatsAppClick}>
@@ -78,6 +92,15 @@ const NavBarNew = () => {
           <div className={styles.mobileMenuContent}>
             <div className={styles.mobileLogo}>
               <img src={logo} alt="Logo" />
+            </div>
+            <div className={styles.mobileSocialIcons}>
+              <div className={styles.iconWrapper} onClick={handleInstagramClick}>
+                <FaInstagram className={styles.icon} />
+              </div>
+              <div className={styles.iconWrapper} onClick={handleWhatsAppClick}>
+                <FaWhatsapp className={styles.icon} />
+              </div>
+
             </div>
           </div>
         </div>

@@ -104,6 +104,69 @@
   filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
 }
 
+/* Social icons styles */
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.iconWrapper:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.iconWrapper:active {
+  transform: scale(0.95);
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.iconWrapper:hover .icon {
+  color: #111;
+  transform: scale(1.1);
+}
+
+/* Mobile social icons */
+.mobileSocialIcons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.mobileSocialIcons .iconWrapper {
+  width: 55px;
+  height: 55px;
+}
+
+.mobileSocialIcons .icon {
+  font-size: 2rem;
+}
+
 /* Updated Menu button styles for glass effect */
 .menuButton {
   position: relative;
@@ -118,7 +181,7 @@
   overflow: hidden;
   outline: none;
   border-radius: 30px;
-  margin-right:50px;
+  margin-right: 5%;
   min-width: 160px;
   height: 45px;
   transition: all 0.3s ease;
@@ -316,6 +379,19 @@
   .navbarInner {
     padding: 0 20px;
   }
+  
+  .socialIcons {
+    gap: 15px;
+  }
+  
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -334,10 +410,24 @@
     height: 50px;
   }
   
+  .socialIcons {
+    gap: 10px;
+  }
+  
+  .iconWrapper {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .icon {
+    font-size: 1.1rem;
+  }
+  
   .menuButton {
-    min-width: 140px;
+    min-width: 120px;
     font-size: 1rem;
     padding: 6px 15px;
+margin-right: 8%;
     height: 40px;
   }
 }

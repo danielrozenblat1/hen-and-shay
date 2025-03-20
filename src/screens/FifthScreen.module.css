@@ -84,4 +84,16 @@
     .priceList {
         grid-template-columns: 1fr;
     }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    .priceTitle {
+        font-size: 1.3rem;
+    }
 }

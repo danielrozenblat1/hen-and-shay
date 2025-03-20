@@ -149,7 +149,7 @@ const AboutUs = () => {
               />
             </div>
             <h3>חיסכון בזמן</h3>
-            <p> בנוסף, אנחנו מתכננים לכם מה שהיינו רוצים לעצמנו</p>
+            <p> בתכנון מראש של הטיול אנחנו נחסוך עבורכם זמן יקר של מחקרים,בדיקות והשוואות. בנוסף, אנחנו מתכננים לכם לא פחות מאת הטיול שהיינו רוצים לעצמנו</p>
           </div>
           <div className={`${styles.advantageItem} ${styles.fadeIn}`} style={{ animationDelay: '0.3s' }}>
             <div className={styles.icon}>
