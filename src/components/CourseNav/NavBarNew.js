@@ -48,7 +48,7 @@ const NavBarNew = () => {
   };
 
   const handleInstagramClick = () => {
-    window.open("https://www.instagram.com/s.n.h.travel", "_blank");
+    window.open("https://www.instagram.com/s.n.h_travel", "_blank");
   };
 
   return (
